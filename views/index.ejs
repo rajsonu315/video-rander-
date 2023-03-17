@@ -1,0 +1,69 @@
+<%- include('./partials/header.ejs') %>
+
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-sm-6 mt-5">
+        <h2 class="alert alert-success text-center">Add New Video</h2>
+        <form method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="text" class="form-control" id="age" name="age" />
+          </div>
+          <div class="mb-3">
+            <label for="fees" class="form-label">Fees</label>
+            <input type="text" class="form-control" id="fees" name="fees" />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div> -->
+      <div class="col-sm-12 mt-5">
+        <h2 class="alert alert-danger text-center"> List </h2>
+        <%# Show All Data %>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">code</th>
+                <th scope="col">counter_name</th>
+                <th scope="col">full_address</th>
+
+
+                <th scope="col">whatsapp_number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% var i=1 %>
+                <% data.forEach((item)=>{ %>
+                  <tr>
+                    <td>
+                      <%= i++ %>
+                    </td>
+                    <td>
+                      <%= item.Code %>
+                    </td>
+                    <td>
+                      <%= item.Counter_Name %>
+                    </td>
+                    <td>
+                      <%= item.Full_Address %>
+                    </td>
+
+                    <td>
+                      <%= item.Whatsapp_Number %>
+                    </td>
+
+                  </tr>
+                  <% }) %>
+
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+  <%- include('./partials/footer.ejs') %>
